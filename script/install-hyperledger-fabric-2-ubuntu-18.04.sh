@@ -16,11 +16,11 @@ set -o errexit
 mydir=$(dirname $0)
 
 echo ""
-echo "Set up Go 1.13.9 ..."
-if [[ -e "/usr/local/go-1.13" ]]; then
-  echo "Warning: Folder/file /usr/local/go-1.13 exists. It seems you have go 1.13 installed. Skip installation."
+echo "Set up Go 1.15.2 ..."
+if [[ -e "/usr/local/go-1.15" ]]; then
+  echo "Warning: Folder/file /usr/local/go-1.15 exists. It seems you have go 1.15 installed. Skip installation."
 else
-  $mydir/install-go.sh 1.13.9
+  $mydir/install-go.sh 1.15.2
 fi
 
 bashrcupdated=1
@@ -31,7 +31,7 @@ if [[ "$bashrcupdated" == "1" ]]; then
   echo 'export PATH=$GOPATH/bin:$PATH' >> ~/.bashrc
 fi
 
-source /etc/profile.d/Z99-go-1.13.sh
+source /etc/profile.d/Z99-go-1.15.sh
 source ~/.bashrc
 
 # set GOPATH explicitely
